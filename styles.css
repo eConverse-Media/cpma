@@ -5,12 +5,11 @@
     padding-bottom: 40px;
 }
 
-
 /* library redesign  */
 
 #MPOuterMost #MPOuter .bootstrap-4 .btn-icon-alt-secondary,
 #MPOuterMost #MPOuter .bootstrap-4 .btn-success,
-#MPOuterMost #MPOuter .bootstrap-4 fieldset.icon-radio-group label input[aria-checked=true]+* {
+#MPOuterMost #MPOuter .bootstrap-4 fieldset.icon-radio-group label input[aria-checked="true"]+* {
     background-color: transparent;
     border: 1px solid #4c8d2b;
     color: #4c8d2b;
@@ -20,9 +19,7 @@
     background-color: #4c8d2b;
 }
 
-
 /* hl buttons */
-
 a[id*="UpcomingEventsRegisterLink"] {
     background-color: transparent;
     border: 1px solid #4c8d2b;
@@ -75,9 +72,7 @@ a[id*="UpcomingEventsRegisterLink"]:focus {
     color: #4c8d2b;
 }
 
-
 /* HL Cancel Button */
-
 .btn-default[id*="Cancel"],
 .btn-default[id*="BtnCancel"] {
     color: #fff;
@@ -109,10 +104,16 @@ input[id*="Clear"]:focus {
 }
 
 span.label.label-admin {
-    background-color: #4c8d2b;
-    opacity: 0.8;
+    background: #F68D2E;
+    border-radius: 30px;
+    padding: 2px 8px;
+    opacity: 1;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
 }
-
 
 /* All HL buttons that aren't primary or secondary */
 
@@ -121,6 +122,7 @@ span.label.label-admin {
     border-radius: 40px;
     padding-left: 12px;
     padding-right: 12px;
+    font-weight: bold;
 }
 
 .btn.btn-default.btnSearch,
@@ -149,7 +151,6 @@ a[id*="MessagesCount"]:focus {
     border: 1px solid #4c8d2b;
 }
 
-
 /* Open dropdown toggle */
 
 .open .dropdown-toggle.btn-success {
@@ -162,6 +163,10 @@ a[id*="MessagesCount"]:focus {
     border: 1px solid #4c8d2b;
 }
 
+.form-group .bootstrap-select.btn-group {
+    background-color: transparent;
+    box-shadow: none;
+}
 
 /* Dropdown toggle caret */
 
@@ -185,8 +190,18 @@ a[id*="MessagesCount"]:focus {
     border-top-color: #fff;
 }
 
+.bootstrap-select.open .dropdown-toggle.btn-default {
+    background: #306216;
+    color: #fff;
+    transition: none;
+}
 
 /* Primary button */
+
+.btn a i,
+.btn a span {
+    transition: none;
+}
 
 .btn-default,
 a[id*="lnkDownloadDoc"],
@@ -215,11 +230,16 @@ fieldset[disabled] .btn-primary.active,
     color: #4c8d2b;
     border: 1px solid #4c8d2b;
     border-radius: 40px !important;
+    font-weight: bold;
 }
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
     border-radius: 40px;
+    border-radius: 0 !important;
+    border: none;
+    background-color: #4c8d2b;
+    color: #fff;
 }
 
 a[id*="lnkDownloadDoc"]:hover,
@@ -242,7 +262,6 @@ a[id*="lnkDownloadDoc"]:focus,
     color: #fff;
     border: 1px solid #4c8d2b;
 }
-
 
 /* Success button */
 
@@ -317,14 +336,12 @@ fieldset[disabled] .btn-success.active {
     border: 1px solid #4c8d2b;
 }
 
-
 /* Fix HL checkmark color */
 
 .faceted-search-main .facets .checkbox input[type="checkbox"]:checked+label::before {
     background-color: #4c8d2b;
     border-color: #4c8d2b;
 }
-
 
 /* Email Tab Colors */
 
@@ -338,7 +355,6 @@ fieldset[disabled] .btn-success.active {
     color: #fff;
 }
 
-
 /* Profile nav tabs at top */
 
 .nav .open>a:hover,
@@ -347,7 +363,6 @@ fieldset[disabled] .btn-success.active {
     border: none;
     color: #fff;
 }
-
 
 /* caret */
 
@@ -358,13 +373,11 @@ fieldset[disabled] .btn-success.active {
     height: unset;
 }
 
-
 /* remove unwanted margin in contacts */
 
 .list-address-panel {
     margin: 0;
 }
-
 
 /* remove default grey color */
 
@@ -373,15 +386,14 @@ fieldset[disabled] .btn-success.active {
 }
 
 .badge {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), #58B84B;
+    background: #b2ada0;
     border-radius: 3px;
     font-weight: bold;
     font-size: 12px;
     line-height: 14px;
-    color: #4C8D2B;
+    color: #fff;
     transform: translateY(-1px);
 }
-
 
 /*  stop the content overflowing to the sides, especially with negative margins on .row */
 
@@ -389,7 +401,6 @@ fieldset[disabled] .btn-success.active {
     overflow-x: hidden;
     overflow-y: hidden;
 }
-
 
 /* hide .HtmlFooter and .MPBottomMenu, both of which add extra padding/whitespace */
 
@@ -403,16 +414,13 @@ fieldset[disabled] .btn-success.active {
     display: none;
 }
 
-
 /* remove bottom margin from empty paragraphs (eg. in widgets) to avoid whitespace */
 
 p:empty {
     margin-bottom: 0;
 }
 
-
 /* this one's not HL-specific */
-
 
 /* centres all background images created using the bg image JS/ajax calls for images */
 
@@ -424,16 +432,13 @@ p:empty {
     background-position: center;
 }
 
-
 /* avoids 1px tall sections, especially when they hold JS but no content */
-
 
 /* can be less specific, but might break other HL functionality */
 
 .home .col-md-12[class*="section"] {
     min-height: 0;
 }
-
 
 /* allows for word breaking for emails and profile inbox messages */
 
@@ -442,14 +447,12 @@ body {
     word-wrap: break-word;
 }
 
-
 /* overrides the above word breaking for yes/no toggle buttons in create event */
 
 #event-additional-details-container {
     overflow-wrap: normal !important;
     word-wrap: normal !important;
 }
-
 
 /* resets the padding on col-md-12 full-width sections */
 
@@ -465,7 +468,6 @@ body {
     padding-right: 15px;
 }
 
-
 /* reset alerts to neutral colours */
 
 .alert-warning,
@@ -477,7 +479,6 @@ body {
     border-color: #ccc;
     color: #333;
 }
-
 
 /*** fix Add Event button styling ***/
 
@@ -491,12 +492,12 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .btn-group>.btn,
     .btn-group-vertical>.btn {
         float: left;
     }
 }
-
 
 /*** fixing non-responsive images ***/
 
@@ -504,20 +505,17 @@ img {
     max-width: 100%;
 }
 
-
 /*** fixing lack of wrapping on community settings dropdown buttons ***/
 
 .CommunityManagementGearStatusPaddingL {
     white-space: normal;
 }
 
-
 /****** fix missing left-hand profile page content on my contacts page ******/
 
 .text-muted-h2.my-contacts .col-md-3.section1 {
     display: block !important;
 }
-
 
 /* Increasing the left offset for skip to content to be moved off the page */
 
@@ -532,20 +530,17 @@ img {
     left: 0;
 }
 
-
 /* Stops logo from bleeding out on IE */
 
 .LogoImg {
     width: 100%;
 }
 
-
 /* Hide welcome button */
 
 #BtnShowProfile {
     display: none;
 }
-
 
 /* Hide HL search */
 
@@ -562,7 +557,6 @@ img {
 #searchColumn .form-control::placeholder {
     font-style: normal;
 }
-
 
 /* Circular Profile Picture Reset */
 
@@ -636,7 +630,6 @@ td.ProfilePic>a {
     height: 45px;
 }
 
-
 /* Links */
 
 a {
@@ -648,7 +641,6 @@ a:hover {
     color: #306216;
     text-decoration: none;
 }
-
 
 /* Transitions */
 
@@ -674,13 +666,11 @@ a i {
     transition: none;
 }
 
-
 /****** basics ******/
 
 .home .no-pageTitle-padding {
     padding-top: 0;
 }
-
 
 /*** fonts ***/
 
@@ -733,7 +723,7 @@ h3 a {
     font-size: 20px;
     line-height: 24px;
     color: #05172d;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 h4 {
@@ -802,7 +792,6 @@ h5>a:hover {
     text-decoration: none;
 }
 
-
 /* backgrounds  */
 
 .bg-grey {
@@ -810,9 +799,7 @@ h5>a:hover {
     padding: 60px calc(50% - 615px);
 }
 
-
 /* buttons */
-
 
 /* login button */
 
@@ -884,6 +871,10 @@ a[id*="LinkToCommunityCalendar"]:focus,
     color: #fff;
 }
 
+.home h2 input[type="submit"]:hover {
+    background-color: #4c8d2b;
+}
+
 .make-buttons.icon em a {
     padding-left: 32px;
 }
@@ -901,7 +892,6 @@ h2 input[type="submit"]::before {
     transform: translateY(-50%);
 }
 
-
 /* page titles */
 
 #PageTitleH1 {
@@ -913,14 +903,37 @@ h2 input[type="submit"]::before {
     font-weight: normal;
     position: relative;
     z-index: auto;
-    background-color: #D6D2C4;
+    background-color: #d6d2c4;
+}
+
+#PageTitleH1 button[id$=communityManagementGearBtn] {
+    background: #FFFFFF;
+    border-radius: 30px;
+    border: none;
+    color: #545859;
+}
+
+#PageTitleH1 button[id$=communityManagementGearBtn] span.glyphicon {
+    transition: none;
+    color: inherit;
+}
+
+#PageTitleH1 button[id$=communityManagementGearBtn] span.glyphicon::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f013";
+}
+
+#PageTitleH1 button[id$=communityManagementGearBtn] span {
+    transform: none
 }
 
 #PageTitleH1.community-landing-page {
     padding-top: 70px;
-    padding-bottom: 80px;
-    background: #F3F5F6;
-    text-align: center;
+    padding-bottom: 115px;
+}
+
+#PageTitleH1.community-landing-page::after {
+    background-image: url("https://higherlogicdownload.s3.amazonaws.com/CPMA/e2953256-b8b0-4853-8c2b-4dfbb7ed88ee/UploadedImages/Dev_Files/clp-wave.png");
 }
 
 #PageTitleH1::after {
@@ -937,54 +950,199 @@ h2 input[type="submit"]::before {
     z-index: 0;
 }
 
-
 /* CLP */
 
 #MainCopy_ContentWrapper.community-landing-page {
     padding-top: 0;
+    background-color: #f0f3f5;
 }
 
 #CommunityTabsContainer.nav-tabs {
-    margin-top: -40px;
     background-color: #fff;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.04), 0px 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 30px;
     margin-top: -55px;
-    /* padding: 10px; */
-    display: flex;
-    justify-content: center;
 }
 
 #CommunityTabsContainer.nav-tabs>li.active>a {
-    background: #4C8D2B;
-    border: 1px solid #4C8D2B;
+    background: #4c8d2b;
+    border: 1px solid #4c8d2b;
     border-radius: 30px;
     color: #fff;
 }
 
 #CommunityTabsContainer.nav-tabs>li>a {
-    background: #FFFFFF;
-    border: 1px solid #4A412A;
+    background: #ffffff;
+    border: 1px solid #4a412a;
     border-radius: 30px;
     margin: 10px 5px;
     padding: 8px 16px;
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
-    color: #4A412A;
+    color: #4a412a;
 }
 
-#CommunityTabsContainer.nav-tabs>li>a:hover {
-    background: #FFFFFF;
-    border: 1px solid #4A412A;
-    border-radius: 30px;
-    margin: 10px 5px;
-    padding: 8px 16px;
+#CommunityTabsContainer.nav-tabs>li>a:hover,
+.dashboard-col-3 div[id*="UpdatePanel"] .community-list>div:first-of-type .row>.col-md-12 h3:hover {
+    background: #4a412a;
+    color: #fff;
+    transition: .3s;
+}
+
+.dashboard-col-3 div[id*="UpdatePanel"] .community-list>div:first-of-type .row>.col-md-12 h3:hover a {
+    color: #fff;
+}
+
+.community-landing-page .commHTMLOptionsToAttach {
+    margin-bottom: 20px;
+}
+
+.community-landing-page .HLLandingControl {
+    margin-bottom: 60px;
+}
+
+.community-landing-page .HLLandingControl .alert {
+    margin-top: 20px;
+}
+
+.community-landing-page .HLLandingControl .Content .col-md-12 a.btn {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.community-landing-page .HLLandingControl .Content ul li {
+    box-shadow: none;
+}
+
+.community-landing-page .HLLandingControl.HLMyDocuments .Content ul li {
+    padding-bottom: 0;
+}
+
+.community-landing-page .HLLandingControl h2,
+.community-landing-page div[id*="UpdatePanel"]>.panel.panel-default .panel-title {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    position: relative;
+    padding-bottom: 10px;
+    padding-top: 8px;
+    color: #05172d;
 }
 
+.community-landing-page div[id*="UpdatePanel"]>.panel.panel-default .panel-heading {
+    background-color: transparent;
+    border-color: #e8ebed;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.community-landing-page .HLLandingControl h2::after,
+.community-landing-page .HLLandingControl .Content .col-md-12 a.btn::before,
+.community-landing-page div[id*="UpdatePanel"]>.panel.panel-default .panel-title h2::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(100% + 10px);
+    bottom: 0px;
+    left: -5px;
+    right: -5px;
+    background: #05172d;
+    opacity: 0.1;
+}
+
+.community-landing-page .HLLandingControl .Content .col-md-12 a.btn::before {
+    top: -20px;
+}
+
+.community-landing-page .HLLandingControl ul li:not(:first-of-type) {
+    position: relative;
+    margin: 0;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+
+.community-landing-page .HLLandingControl ul li:not(:first-of-type):before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(100% - 20px);
+    top: 0;
+    left: 15px;
+    right: 15px;
+    background: #05172d;
+    opacity: 0.1;
+}
+
+.community-landing-page .HLLandingControl,
+.community-landing-page div[id*="UpdatePanel"]>.panel.panel-default {
+    background: #ffffff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    border: none;
+}
+
+.community-landing-page div[id*="UpdatePanel"]>.panel .panel-body .form-control {
+    border: 1px solid #E8EBED;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #2D2D2D;
+    padding: 4px 10px;
+}
+
+.community-landing-page div[id*="UpdatePanel"]>.panel .panel-body {
+    padding: 20px 25px;
+}
+
+.community-landing-page div[id*="UpdatePanel"]>.panel .panel-body .panel-member {
+    border: 1px solid #E8EBED;
+    padding: 20px;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+.community-landing-page div[id*="UpdatePanel"]>.panel .panel-body .panel-member .GroupMemberName a {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #17171C;
+    text-decoration: none;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.community-landing-page div[id*="UpdatePanel"]>.panel .panel-body span[id*="MemberCountLink"] {
+    font-weight: normal !important;
+    font-size: 19px;
+    line-height: 23px;
+    color: #2D2D2D;
+}
+
+.pagination>li:first-child>a,
+.pagination>li:first-child>span {
+    border-radius: 30px 0px 0px 30px;
+}
+
+.pagination>li:last-child>a,
+.pagination>li:last-child>span {
+    border-radius: 0px 30px 30px 0px;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    background: #F0F3F5;
+    border: 1px solid #C2C2C2;
+}
 
 /* Moving Navigation inline with the Logo and TTL and Welcome Content */
 
@@ -1055,13 +1213,13 @@ h2 input[type="submit"]::before {
     padding: 0;
 }
 
-
 /* Main Nav */
 
 #MPOuterMost.full #HEADER {
     max-width: 100%;
     background: #ffffff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 20px 5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.01),
+        0px 0px 20px 5px rgba(0, 0, 0, 0.04);
     height: 110px;
     position: relative;
 }
@@ -1074,7 +1232,8 @@ h2 input[type="submit"]::before {
 
 #HEADER>.col-md-12 {
     background: #4c8d2b;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.01), 0px 0px 20px 5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.01),
+        0px 0px 20px 5px rgba(0, 0, 0, 0.04);
     height: 36px;
 }
 
@@ -1104,7 +1263,7 @@ h2 input[type="submit"]::before {
     bottom: 10px;
     width: calc(100% - 20px);
     height: 2px;
-    background: #84BD00;
+    background: #84bd00;
     opacity: 0;
     transition: 0.3s;
 }
@@ -1172,18 +1331,18 @@ ul.navbar-nav li a .caret::before {
     min-width: 160px;
 }
 
-.dropdown-menu>li>a {
+.navbar .dropdown-menu>li>a {
     background-color: transparent;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
-    color: #05172D;
+    color: #05172d;
     padding: 0;
     padding-bottom: 10px;
     position: relative;
 }
 
-.dropdown-menu>li:last-of-type>a {
+.navbar .dropdown-menu>li:last-of-type>a {
     padding: 0;
 }
 
@@ -1197,14 +1356,13 @@ ul.navbar-nav li a .caret::before {
     text-decoration: underline !important;
 }
 
-
 /* Search */
 
 .search-bar-top {
     height: 0;
-    background: #D6D2C4;
+    background: #d6d2c4;
     padding: 0 calc(50% - 585px);
-    transition: .3s;
+    transition: 0.3s;
     overflow: hidden;
 }
 
@@ -1235,14 +1393,14 @@ ul.navbar-nav li a .caret::before {
     box-shadow: none;
     font-size: 20px;
     line-height: 24px;
-    color: #05172D;
+    color: #05172d;
 }
 
 .hero-search .form-control::placeholder,
 .search-bar-top .form-control::placeholder,
 #searchColumn .form-control::placeholder {
     font-style: normal;
-    color: #05172D;
+    color: #05172d;
 }
 
 .search-bar-top button[id*="SearchButton"],
@@ -1254,7 +1412,7 @@ ul.navbar-nav li a .caret::before {
     border-radius: 0;
     width: 112px;
     height: 44px;
-    background: #4C8D2B;
+    background: #4c8d2b;
     margin-right: 10px;
 }
 
@@ -1267,13 +1425,13 @@ ul.navbar-nav li a .caret::before {
     font-size: 18px;
     line-height: 22px;
     border-radius: 40px;
-    background: #F0F3F5;
-    color: #4C8D2B;
+    background: #f0f3f5;
+    color: #4c8d2b;
 }
 
 .open.search-btn-top button,
 .search-btn-top button:hover {
-    background: #F68D2E;
+    background: #f68d2e;
     color: #fff;
 }
 
@@ -1315,13 +1473,13 @@ ul.navbar-nav li a .caret::before {
 }
 
 .search-bar-top .glyphicon-search::after {
-    content: 'Search';
-    font-family: 'Calibri';
+    content: "Search";
+    font-family: "Calibri";
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .open.search-btn-top i::before {
@@ -1331,7 +1489,6 @@ ul.navbar-nav li a .caret::before {
 .input-group-btn button.dropdown-toggle {
     display: none;
 }
-
 
 /****** member dashboard ******/
 
@@ -1663,11 +1820,11 @@ ul.navbar-nav li a .caret::before {
     margin: 0;
 }
 
-.dashboard-col-3 div[id*="UpdatePanel"] .community-list:nth-child(n+9) {
+.dashboard-col-3 div[id*="UpdatePanel"] .community-list:nth-child(n + 9) {
     display: none;
 }
 
-.member-dashboard.has-membership .dashboard-col-3 div[id*="UpdatePanel"] .community-list:nth-child(n+8) {
+.member-dashboard.has-membership .dashboard-col-3 div[id*="UpdatePanel"] .community-list:nth-child(n + 8) {
     display: none;
 }
 
@@ -1691,6 +1848,7 @@ ul.navbar-nav li a .caret::before {
     font-size: 14px;
     line-height: 17px;
     margin: 7px 0;
+    transition: .3s;
 }
 
 .dashboard-col-3 div[id*="UpdatePanel"] .community-list>div:first-of-type .row>.col-md-12 h3 a {
@@ -1733,7 +1891,6 @@ ul.navbar-nav li a .caret::before {
     font-weight: 400;
     font-size: 12px;
 }
-
 
 /* toggle */
 
@@ -1778,7 +1935,6 @@ ul.navbar-nav li a .caret::before {
 .member-dashboard:not(.open) .dashboard-toggle button::before {
     content: "\f424";
 }
-
 
 /* hero */
 
@@ -1841,7 +1997,6 @@ ul.navbar-nav li a .caret::before {
     color: #fff;
 }
 
-
 /* top tiles */
 
 .top-tiles {
@@ -1867,13 +2022,13 @@ ul.navbar-nav li a .caret::before {
     border-radius: 10px;
     margin: 0 10px;
     position: relative;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .top-tile:hover {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 20px rgba(0, 0, 0, 0.05);
     transform: translateY(-4px);
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .top-tile>a {
@@ -1994,7 +2149,6 @@ ul.navbar-nav li a .caret::before {
     font-weight: 400;
 }
 
-
 /* popular discussions */
 
 .HLLandingControl .Content ul li {
@@ -2027,7 +2181,7 @@ ul.navbar-nav li a .caret::before {
 }
 
 .HLLandingControl.HLDiscussions .Content ul li h5,
-.HLLandingControl.HLDiscussions .Content ul li .ByLine {
+.HLLandingControl.HLDiscussions .Content ul li .ByLine{
     display: inline-block;
     margin-top: -10px;
 }
@@ -2044,7 +2198,6 @@ ul.navbar-nav li a .caret::before {
     max-width: 765px;
     margin: -10px;
 }
-
 
 /* participate */
 
@@ -2091,7 +2244,6 @@ ul.navbar-nav li a .caret::before {
     transform: translateX(-50%);
 }
 
-
 /* callout boxes */
 
 .callout-box {
@@ -2104,6 +2256,11 @@ ul.navbar-nav li a .caret::before {
 }
 
 .callout-box>h2 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     margin: 0;
     position: relative;
     padding-bottom: 10px;
@@ -2153,7 +2310,6 @@ ul.navbar-nav li a .caret::before {
 .callout-box.icon.orange>h2::before {
     color: #f68d2e;
 }
-
 
 /* featured company */
 
@@ -2206,7 +2362,6 @@ ul.navbar-nav li a .caret::before {
     display: none;
 }
 
-
 /* news */
 
 .home .HLRecentBlogs,
@@ -2249,7 +2404,7 @@ ul.navbar-nav li a .caret::before {
 .home .HLRecentBlogs .next-arrow:hover,
 .home .HLRSSReader .prev-arrow:hover,
 .home .HLRSSReader .next-arrow:hover {
-    color: #84BD00;
+    color: #84bd00;
 }
 
 .home .HLRecentBlogs .prev-arrow i,
@@ -2273,7 +2428,6 @@ ul.navbar-nav li a .caret::before {
 .home .HLLandingControl.HLRecentBlogs h2 a[id*="MoreLink"] {
     float: right;
 }
-
 
 /* featured event */
 
@@ -2349,7 +2503,6 @@ ul.navbar-nav li a .caret::before {
     border-radius: 4px 0px 4px 0px;
 }
 
-
 /* footer */
 
 #MPOuterMost.full #FOOTER {
@@ -2360,7 +2513,6 @@ ul.navbar-nav li a .caret::before {
 #MPOuterMost.full #FOOTER * {
     color: #fff;
 }
-
 
 /* footer top */
 
@@ -2374,7 +2526,6 @@ ul.navbar-nav li a .caret::before {
     justify-content: space-between;
     margin: auto;
 }
-
 
 /* .footer-top > .col-md-12 > .ContentItemHtml {
   margin: 0 73px;
@@ -2442,7 +2593,6 @@ ul.navbar-nav li a .caret::before {
     margin: 4px;
 }
 
-
 /* footer bottom */
 
 .footer-bottom {
@@ -2462,21 +2612,29 @@ ul.navbar-nav li a .caret::before {
     .member-dashboard::after {
         bottom: -15px;
     }
+
+    #PageTitleH1::after {
+        bottom: -25px;
+    }
 }
 
 @media (max-width: 1170px) {
     #MPheader>div.row:first-child {
         right: 0;
     }
+
     .top-text-link {
         left: 10px;
     }
+
     #Logo {
         left: 10px;
     }
+
     #NAV {
         right: -30px;
     }
+
     #Logo {
         max-width: 120px;
     }
@@ -2486,25 +2644,32 @@ ul.navbar-nav li a .caret::before {
     .dashboard-link {
         flex-basis: 50%;
     }
+
     .hero .HtmlContent>div {
         flex-basis: 100%;
     }
+
     .hero .HtmlContent {
         padding: 60px;
     }
+
     .hero .HtmlContent .img-container {
         margin-top: 30px;
     }
+
     .top-tiles,
     .featured-event .HtmlContent {
         width: unset;
     }
+
     .footer-top .footer-links ul li {
         width: 100%;
     }
+
     .featured-event .HtmlContent .text-container::before {
         display: none;
     }
+
     .featured-event .HtmlContent .text-container::after {
         transform: unset;
         left: 0;
@@ -2517,22 +2682,33 @@ ul.navbar-nav li a .caret::before {
     .popular-discussions {
         max-width: unset;
     }
+
+
+    .interior .row-wide div[class*="section"] {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
+
 
 @media (max-width: 870px) {
     .member-dashboard::after {
         bottom: -20px;
     }
+
     .top-tiles {
         justify-content: center;
     }
+
     .top-tile {
         width: calc(33% - 20px);
         margin: 10px;
     }
+
     .member-dashboard:not(.open) .dashboard-links {
         display: none;
     }
+
     .user-details {
         flex-basis: 100%;
     }
@@ -2545,50 +2721,62 @@ ul.navbar-nav li a .caret::before {
         top: 0;
         right: 1px;
     }
+
     .navbar-default .navbar-collapse,
     .navbar-default .navbar-form {
         border: none;
     }
+
     #NAV {
         right: 0;
         position: relative;
         margin-top: -50px;
     }
+
     .home .HLRecentBlogs,
     .home .HLRSSReader {
         margin-left: 15px;
         margin-right: 15px;
     }
+
     #MPheader>div.row:first-child {
         right: 10px;
     }
+
     .top-tiles {
         justify-content: center;
         padding: 40px 0;
     }
+
     .top-tile {
         width: calc(33% - 20px);
         margin: 10px;
     }
+
     .footer-top>.col-md-12 {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
+
     .footer-top>.col-md-12>div {
         width: 100%;
         margin: 10px 0;
     }
+
     .footer-top,
     .footer-bottom {
         padding: 15px;
     }
+
     .footer-top h2,
     .footer-attribution p {
         text-align-last: left;
     }
+
     .footer-top .footer-social ul {
         justify-content: flex-start;
     }
+
     .open.member-dashboard>.row.row-wide {
         padding-left: 15px;
         padding-right: 15px;
@@ -2599,16 +2787,20 @@ ul.navbar-nav li a .caret::before {
     .top-tile {
         width: calc(50% - 20px);
     }
+
     .featured-event .HtmlContent>div {
         flex-basis: 100%;
     }
+
     .featured-event .HtmlContent .img-container {
         height: 400px;
         border-radius: 10px 10px 0 0;
     }
+
     .featured-event .HtmlContent .text-container {
         border-radius: 0 0 10px 10px;
     }
+
     .featured-event .HtmlContent .text-container::after {
         width: 100%;
         height: 8px;
@@ -2619,12 +2811,15 @@ ul.navbar-nav li a .caret::before {
     #MPOuterMost.full #HEADER {
         height: 130px;
     }
+
     #HEADER>.col-md-12 {
         height: 70px;
     }
+
     .top-text-link {
         position: unset;
     }
+
     .top-text-link ul {
         justify-content: flex-end;
         padding: 5px;
@@ -2635,6 +2830,7 @@ ul.navbar-nav li a .caret::before {
     .member-dashboard::after {
         bottom: -25px;
     }
+
     .dashboard-toggle {
         bottom: -20px;
     }
@@ -2644,6 +2840,7 @@ ul.navbar-nav li a .caret::before {
     .top-tile {
         width: calc(100% - 20px);
     }
+
     .HLLandingControl.HLDiscussions .Content ul li h5,
     .HLLandingControl.HLDiscussions .Content ul li .ByLine {
         margin-top: 0;

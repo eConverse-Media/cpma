@@ -1,10 +1,10 @@
-$(function() {
+$(function () {
     handlePageTitles();
-    handleNav();
     handleSearch();
     handleHero();
     handlePopularDiscussions();
     handleNews();
+    handleCLP();
     handleFeaturedCompany();
     handleFeaturedEvent();
 });
@@ -27,7 +27,7 @@ function handleSearch() {
         $('.search-bar-top .form-control').attr('placeholder', 'Search the directory, communities, resources...');
     }
 
-    $(document).click(function(e) {
+    $(document).click(function (e) {
         var searchBar = $('.search-bar-top'),
             searchButton = $('.search-btn-top'),
             target = e.target;
@@ -83,7 +83,7 @@ function handleHero() {
         $('.hero-search .form-control').attr('placeholder', 'Search the directory, communities, resources...');
     }
 
-    $(".top-tile").each(function() {
+    $(".top-tile").each(function () {
         var self = $(this);
 
         var link = $(self).find("h3 a"),
@@ -102,8 +102,8 @@ function handleHero() {
 }
 
 function handlePopularDiscussions() {
-    $(".home .ContentUserControl .HLLandingControl.HLDiscussions ul li").each(
-        function() {
+    $(".ContentUserControl .HLLandingControl.HLDiscussions ul li").each(
+        function () {
             var byline = $(this).find(".ByLine");
             var communityName = $(this).find("h5");
 
@@ -112,7 +112,7 @@ function handlePopularDiscussions() {
 
             $(communityName)
                 .contents()
-                .filter(function() {
+                .filter(function () {
                     return this.nodeType === 3;
                 })
                 .remove();
@@ -152,10 +152,24 @@ function handleNews() {
 
     $('.home .HLLandingControl.HLRSSReader h2').append($('.home .HLLandingControl.HLRSSReader .Content a[id*="lnkMore"]'))
     $('.home .HLLandingControl.HLRecentBlogs h2').append($('.home .HLLandingControl.HLRecentBlogs .Content a[id*="MoreLink"]'))
+
 }
 
+function handleCLP() {
+    $(".community-landing-page .ContentUserControl .HLLandingControl.HLRecentBlogs ul li").each(
+        function () {
+            var byline = $(this).find(".ByLine");
+            // var content = $(this).find('.row.content-row')
+            // $(content).appendTo(this);
+            console.log(byline);
+            $(byline).appendTo(this);
+
+        }
+    );
+};
+
 function handleFeaturedCompany() {
-    $(".featured-company .HtmlContent > *").each(function() {
+    $(".featured-company .HtmlContent > *").each(function () {
         var self = $(this)
         $(self).appendTo('.callout-box.company>.HtmlContent')
     });
