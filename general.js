@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     handlePageTitles();
     handleSearch();
     handleHero();
@@ -27,7 +27,7 @@ function handleSearch() {
         $('.search-bar-top .form-control').attr('placeholder', 'Search the directory, communities, resources...');
     }
 
-    $(document).click(function (e) {
+    $(document).click(function(e) {
         var searchBar = $('.search-bar-top'),
             searchButton = $('.search-btn-top'),
             target = e.target;
@@ -83,7 +83,7 @@ function handleHero() {
         $('.hero-search .form-control').attr('placeholder', 'Search the directory, communities, resources...');
     }
 
-    $(".top-tile").each(function () {
+    $(".top-tile:not(.resources)").each(function() {
         var self = $(this);
 
         var link = $(self).find("h3 a"),
@@ -99,11 +99,29 @@ function handleHero() {
             $(self).wrapInner('<a href="' + href + '" />');
         }
     });
+
+    $('.top-tile.resources .HtmlContent').click(function() {
+        $(this).parent().addClass('open')
+    });
+
+    $('.top-tile.resources').prepend(
+        '<button type="button" onclick="toggleTile();"><i class="far fa-times"></i></button>'
+    );
+}
+
+function toggleTile() {
+    if ($('.top-tile.resources').hasClass('open')) {
+        closeTile();
+    }
+}
+
+function closeTile() {
+    $('.top-tile.resources').removeClass('open');
 }
 
 function handlePopularDiscussions() {
     $(".ContentUserControl .HLLandingControl.HLDiscussions ul li").each(
-        function () {
+        function() {
             var byline = $(this).find(".ByLine");
             var communityName = $(this).find("h5");
 
@@ -112,7 +130,7 @@ function handlePopularDiscussions() {
 
             $(communityName)
                 .contents()
-                .filter(function () {
+                .filter(function() {
                     return this.nodeType === 3;
                 })
                 .remove();
@@ -121,7 +139,7 @@ function handlePopularDiscussions() {
 }
 
 function handleNews() {
-    $(".home .HLLandingControl.HLRecentBlogs .Content .col-md-12>ul, .home .HLLandingControl.HLRSSReader .Content>ul").slick({
+    $(".home .HLLandingControl.HLRecentBlogs .Content .col-md-12>ul, .home .committee-news .HLLandingControl.HLRSSReader .Content>ul").slick({
         dots: false,
         arrows: true,
         infinite: true,
@@ -150,14 +168,14 @@ function handleNews() {
         ]
     });
 
-    $('.home .HLLandingControl.HLRSSReader h2').append($('.home .HLLandingControl.HLRSSReader .Content a[id*="lnkMore"]'))
+    $('.home .committee-news .HLLandingControl.HLRSSReader h2').append($('.home .committee-news .HLLandingControl.HLRSSReader .Content a[id*="lnkMore"]'))
     $('.home .HLLandingControl.HLRecentBlogs h2').append($('.home .HLLandingControl.HLRecentBlogs .Content a[id*="MoreLink"]'))
 
 }
 
 function handleCLP() {
     $(".community-landing-page .ContentUserControl .HLLandingControl.HLRecentBlogs ul li").each(
-        function () {
+        function() {
             var byline = $(this).find(".ByLine");
             // var content = $(this).find('.row.content-row')
             // $(content).appendTo(this);
@@ -169,7 +187,14 @@ function handleCLP() {
 };
 
 function handleFeaturedCompany() {
-    $(".featured-company .HtmlContent > *").each(function () {
+    $('.featured-company, .callout-box.company').each(function() {
+        $(this).find('.HtmlContent > img:first-of-type').wrap('<div class="img-container" />');
+        $(this).find('.HtmlContent > *:not(img)').wrapAll('<div class="text-container" />');
+        $(this).find('.img-container').prependTo($(this).find('.text-container'));
+        handleBgImage($(this), $(this).find('.img-container'));
+    });
+
+    $(".featured-company .HtmlContent > *").each(function() {
         var self = $(this)
         $(self).appendTo('.callout-box.company>.HtmlContent')
     });
