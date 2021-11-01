@@ -24,7 +24,7 @@ function handleSearch() {
     if ($('.search-bar-top .form-control').length && $(window).width() < 651) {
         $('.search-bar-top .form-control').attr('placeholder', 'Search...');
     } else {
-        $('.search-bar-top .form-control').attr('placeholder', 'Search the directory, communities, resources...');
+        $('.search-bar-top .form-control').attr('placeholder', 'Search the directory, committees, resources...');
     }
 
     $(document).click(function(e) {
