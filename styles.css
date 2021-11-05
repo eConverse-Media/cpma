@@ -167,6 +167,25 @@ span.label.label-admin {
 
 /* All HL buttons that aren't primary or secondary */
 
+
+/* change communities to committees */
+
+.welcome-links a[id*="communitiesLink"] {
+    font-size: 0;
+}
+
+.welcome-links a[id*="communitiesLink"] span {
+    font-size: 12px;
+    transition: none;
+    margin-right: 4px;
+}
+
+.welcome-links a[id*="communitiesLink"]::after {
+    font-family: "Calibri";
+    content: "Committees";
+    font-size: 12px;
+}
+
 .welcome-links a,
 .interior .btn:not(.btn-secondary):not(.dropdown-toggle) {
     border-radius: 40px;
@@ -564,7 +583,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
     .btn-group>.btn,
     .btn-group-vertical>.btn {
         float: left;
@@ -1012,14 +1030,28 @@ a[id*="LinkToCommunityCalendar"]:focus,
 
 #PageTitleH1 {
     max-width: 100%;
-    padding: 60px;
-    padding-bottom: 70px;
+    padding: 30px;
+    padding-bottom: 60px;
     padding-left: calc(50% - 585px);
     color: #4a412a;
     font-weight: normal;
     position: relative;
     z-index: auto;
     background-color: #d6d2c4;
+    overflow: hidden;
+}
+
+#PageTitleH1::before {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f06c";
+    font-size: 130px;
+    width: 130px;
+    height: 130px;
+    top: 35px;
+    font-weight: 400;
+    position: absolute;
+    right: 150px;
+    color: #4a412a;
 }
 
 #PageTitleH1 button[id$="communityManagementGearBtn"] {
@@ -1061,7 +1093,7 @@ a[id*="LinkToCommunityCalendar"]:focus,
     position: absolute;
     width: calc(100% + 1px);
     height: 100%;
-    bottom: calc(50% - 160px);
+    bottom: calc(50% - 220px);
     left: 0;
     z-index: 0;
 }
@@ -1623,7 +1655,7 @@ ul.navbar-nav li a .caret::before {
 
 .member-dashboard {
     position: relative;
-    z-index: 10;
+    z-index: 0;
     background: #f3f5f6;
     margin-bottom: 40px;
 }
@@ -1661,9 +1693,13 @@ ul.navbar-nav li a .caret::before {
     position: absolute;
     width: calc(100% + 1px);
     height: 100%;
-    bottom: calc(50% - 400px);
+    bottom: calc(50% - 160px);
     z-index: 0;
     transition: all 0.6s ease-in-out;
+}
+
+.open.member-dashboard::after {
+    bottom: calc(50% - 400px);
 }
 
 .member-dashboard>.row.row-wide {
@@ -2155,7 +2191,8 @@ ul.navbar-nav li a .caret::before {
 
 /* top tiles */
 
-.top-tiles {
+.top-tiles,
+.research-tiles {
     display: flex;
     flex-wrap: wrap;
     padding: 40px;
@@ -2166,12 +2203,14 @@ ul.navbar-nav li a .caret::before {
 }
 
 @media (min-width: 1280px) {
-    .top-tiles {
+    .top-tiles,
+    .research-tiles {
         margin: 0 calc(50% - 635px) 60px;
     }
 }
 
-.top-tile {
+.top-tile,
+.research-tile {
     width: calc(20% - 20px);
     background: #ffffff;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -2182,7 +2221,13 @@ ul.navbar-nav li a .caret::before {
     flex-grow: 1;
 }
 
-.top-tile:hover {
+.research-tile {
+    width: calc(33% - 20px);
+    margin: 10px;
+}
+
+.top-tile:hover,
+.research-tile:hover {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 20px rgba(0, 0, 0, 0.05);
     transform: translateY(-4px);
     transition: 0.3s;
@@ -2190,6 +2235,7 @@ ul.navbar-nav li a .caret::before {
 }
 
 .top-tile>a,
+.research-tile>a,
 .top-tile.resources .HtmlContent {
     text-decoration: none;
     display: block;
@@ -2197,11 +2243,13 @@ ul.navbar-nav li a .caret::before {
     padding-top: 100px;
 }
 
-.top-tile .HtmlContent h3 {
+.top-tile .HtmlContent h3,
+.research-tile h3 {
     margin: 0;
 }
 
-.top-tile .HtmlContent::before {
+.top-tile .HtmlContent::before,
+.research-tile .HtmlContent::before {
     font-family: "Font Awesome 5 Pro";
     font-weight: 400;
     font-size: 30px;
@@ -2218,44 +2266,72 @@ ul.navbar-nav li a .caret::before {
     content: "\f007";
 }
 
-.top-tile.blue .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].blue .HtmlContent::before {
     background: #418fde;
 }
 
-.top-tile.orange .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].orange .HtmlContent::before {
     background: #f68d2e;
 }
 
-.top-tile.green .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].green .HtmlContent::before {
     background: #4c8d2b;
 }
 
-.top-tile.brown .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].brown .HtmlContent::before {
     background: #4a412a;
 }
 
-.top-tile.red .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].red .HtmlContent::before {
     background: #b7312c;
 }
 
-.top-tile.company-dir .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].grey .HtmlContent::before {
+    background: #545859;
+}
+
+div[class*="tiles"] div[class*="tile"].company-dir .HtmlContent::before {
     content: "\f2b9";
 }
 
-.top-tile.member-dir .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].member-dir .HtmlContent::before {
     content: "\f0c0";
 }
 
-.top-tile.waste .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].waste .HtmlContent::before {
     content: "\f4d8";
 }
 
-.top-tile.education .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].education .HtmlContent::before {
     content: "\f5db";
 }
 
-.top-tile.resources .HtmlContent::before {
+div[class*="tiles"] div[class*="tile"].resources .HtmlContent::before {
     content: "\f007";
+}
+
+div[class*="tiles"] div[class*="tile"].globe .HtmlContent::before {
+    content: "\f0ac";
+}
+
+div[class*="tiles"] div[class*="tile"].search .HtmlContent::before {
+    content: "\f002";
+}
+
+div[class*="tiles"] div[class*="tile"].report .HtmlContent::before {
+    content: "\f659";
+}
+
+div[class*="tiles"] div[class*="tile"].trends .HtmlContent::before {
+    content: "\f201";
+}
+
+div[class*="tiles"] div[class*="tile"].clock .HtmlContent::before {
+    content: "\f017";
+}
+
+div[class*="tiles"] div[class*="tile"].file .HtmlContent::before {
+    content: "\f15c";
 }
 
 .top-tile.resources ul,
@@ -2535,6 +2611,10 @@ ul.navbar-nav li a .caret::before {
     right: 0;
 }
 
+.callout-box.icon.resources>h2::before {
+    content: "\f15c";
+}
+
 .callout-box.icon.podcast>h2::before {
     content: "\f2ce";
 }
@@ -2557,6 +2637,10 @@ ul.navbar-nav li a .caret::before {
 
 .callout-box.icon.orange>h2::before {
     color: #f68d2e;
+}
+
+.callout-box.icon.green>h2::before {
+    color: #4c8d2b;
 }
 
 
@@ -2895,32 +2979,18 @@ ul.navbar-nav li a .caret::before {
 }
 
 @media (max-width: 1170px) {
-    .member-dashboard::after {
-        bottom: -15px;
-    }
-
-    #PageTitleH1::after {
-        bottom: -25px;
-    }
-}
-
-@media (max-width: 1170px) {
     #MPheader>div.row:first-child {
         right: 0;
     }
-
     .top-text-link {
         left: 10px;
     }
-
     #Logo {
         left: 10px;
     }
-
     #NAV {
         right: -30px;
     }
-
     #Logo {
         max-width: 120px;
     }
@@ -2930,32 +3000,25 @@ ul.navbar-nav li a .caret::before {
     .dashboard-link {
         flex-basis: 50%;
     }
-
     .hero .HtmlContent>div {
         flex-basis: 100%;
     }
-
     .hero .HtmlContent {
         padding: 60px;
     }
-
     .hero .HtmlContent .img-container {
         margin-top: 30px;
     }
-
     .top-tiles,
     .featured-event .HtmlContent {
         width: unset;
     }
-
     .footer-top .footer-links ul li {
         width: 100%;
     }
-
     .featured-event .HtmlContent .text-container::before {
         display: none;
     }
-
     .featured-event .HtmlContent .text-container::after {
         transform: unset;
         left: 0;
@@ -2965,12 +3028,10 @@ ul.navbar-nav li a .caret::before {
 }
 
 @media (max-width: 991px) {
-
     .community-discussions,
     .non-committee-news {
         max-width: unset;
     }
-
     .interior .row-wide div[class*="section"] {
         padding-right: 15px;
         padding-left: 15px;
@@ -2978,23 +3039,16 @@ ul.navbar-nav li a .caret::before {
 }
 
 @media (max-width: 870px) {
-    .member-dashboard::after {
-        bottom: -20px;
-    }
-
     .top-tiles {
         justify-content: center;
     }
-
     .top-tile {
         width: calc(33% - 20px);
         margin: 10px;
     }
-
     .member-dashboard:not(.open) .dashboard-links {
         display: none;
     }
-
     .user-details {
         flex-basis: 100%;
     }
@@ -3007,62 +3061,50 @@ ul.navbar-nav li a .caret::before {
         top: 0;
         right: 1px;
     }
-
     .navbar-default .navbar-collapse,
     .navbar-default .navbar-form {
         border: none;
     }
-
     #NAV {
         right: 0;
         position: relative;
         margin-top: -50px;
     }
-
     .home .HLRecentBlogs,
     .home .HLRSSReader {
         margin-left: 15px;
         margin-right: 15px;
     }
-
     #MPheader>div.row:first-child {
         right: 10px;
     }
-
     .top-tiles {
         justify-content: center;
         padding: 40px 0;
     }
-
     .top-tile {
         width: calc(33% - 20px);
         margin: 10px;
     }
-
     .footer-top>.col-md-12 {
         flex-wrap: wrap;
         justify-content: flex-start;
     }
-
     .footer-top>.col-md-12>div {
         width: 100%;
         margin: 10px 0;
     }
-
     .footer-top,
     .footer-bottom {
         padding: 15px;
     }
-
     .footer-top h2,
     .footer-attribution p {
         text-align-last: left;
     }
-
     .footer-top .footer-social ul {
         justify-content: flex-start;
     }
-
     .open.member-dashboard>.row.row-wide {
         padding-left: 15px;
         padding-right: 15px;
@@ -3070,26 +3112,28 @@ ul.navbar-nav li a .caret::before {
 }
 
 @media (max-width: 650px) {
+    .open.member-dashboard::after {
+        bottom: calc(50% - 405px)
+    }
     .top-tile {
         width: calc(50% - 20px);
     }
-
     .featured-event .HtmlContent>div {
         flex-basis: 100%;
     }
-
     .featured-event .HtmlContent .img-container {
         height: 400px;
         border-radius: 10px 10px 0 0;
     }
-
     .featured-event .HtmlContent .text-container {
         border-radius: 0 0 10px 10px;
     }
-
     .featured-event .HtmlContent .text-container::after {
         width: 100%;
         height: 8px;
+    }
+    .member-dashboard::after {
+        bottom: calc(50% - 165px);
     }
 }
 
@@ -3097,15 +3141,12 @@ ul.navbar-nav li a .caret::before {
     #MPOuterMost.full #HEADER {
         height: 130px;
     }
-
     #HEADER>.col-md-12 {
         height: 70px;
     }
-
     .top-text-link {
         position: unset;
     }
-
     .top-text-link ul {
         justify-content: flex-end;
         padding: 5px;
@@ -3113,10 +3154,6 @@ ul.navbar-nav li a .caret::before {
 }
 
 @media (max-width: 550px) {
-    .member-dashboard::after {
-        bottom: -25px;
-    }
-
     .dashboard-toggle {
         bottom: -20px;
     }
@@ -3126,7 +3163,6 @@ ul.navbar-nav li a .caret::before {
     .top-tile {
         width: calc(100% - 20px);
     }
-
     .HLLandingControl.HLDiscussions .Content ul li h5,
     .HLLandingControl.HLDiscussions .Content ul li .ByLine {
         margin-top: 0;
