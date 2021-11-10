@@ -75,6 +75,8 @@ function handleHero() {
     );
 
     $(".top-tile").wrapAll('<div class="top-tiles">');
+    $(".interior-tile").wrapAll('<div class="interior-tiles">');
+
     $(".hero-search").appendTo(".top-tiles");
 
     if ($('.hero-search .form-control').length && $(window).width() < 651) {
@@ -83,7 +85,7 @@ function handleHero() {
         $('.hero-search .form-control').attr('placeholder', 'Search the directory, communities, resources...');
     }
 
-    $(".top-tile:not(.resources)").each(function() {
+    $(".top-tile:not(.resources), .interior-tile").each(function() {
         var self = $(this);
 
         var link = $(self).find("h3 a"),

@@ -49,6 +49,10 @@ table tr td {
     padding-bottom: 40px;
 }
 
+.interior #MainCopy_ContentWrapper .ContentItemHtml .HtmlContent ul li {
+    font-size: 18px;
+}
+
 
 /* library redesign  */
 
@@ -1052,6 +1056,7 @@ a[id*="LinkToCommunityCalendar"]:focus,
     position: absolute;
     right: 150px;
     color: #4a412a;
+    opacity: 0.2;
 }
 
 #PageTitleH1 button[id$="communityManagementGearBtn"] {
@@ -1093,7 +1098,7 @@ a[id*="LinkToCommunityCalendar"]:focus,
     position: absolute;
     width: calc(100% + 1px);
     height: 100%;
-    bottom: calc(50% - 220px);
+    bottom: calc(50% - 130px);
     left: 0;
     z-index: 0;
 }
@@ -2192,7 +2197,7 @@ ul.navbar-nav li a .caret::before {
 /* top tiles */
 
 .top-tiles,
-.research-tiles {
+.interior-tiles {
     display: flex;
     flex-wrap: wrap;
     padding: 40px;
@@ -2204,13 +2209,13 @@ ul.navbar-nav li a .caret::before {
 
 @media (min-width: 1280px) {
     .top-tiles,
-    .research-tiles {
+    .interior-tiles {
         margin: 0 calc(50% - 635px) 60px;
     }
 }
 
 .top-tile,
-.research-tile {
+.interior-tile {
     width: calc(20% - 20px);
     background: #ffffff;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 20px rgba(0, 0, 0, 0.05);
@@ -2221,13 +2226,13 @@ ul.navbar-nav li a .caret::before {
     flex-grow: 1;
 }
 
-.research-tile {
+.interior-tile {
     width: calc(33% - 20px);
     margin: 10px;
 }
 
 .top-tile:hover,
-.research-tile:hover {
+.interior-tile:hover {
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.02), 0px 4px 20px rgba(0, 0, 0, 0.05);
     transform: translateY(-4px);
     transition: 0.3s;
@@ -2235,21 +2240,23 @@ ul.navbar-nav li a .caret::before {
 }
 
 .top-tile>a,
-.research-tile>a,
+.interior-tile>a,
 .top-tile.resources .HtmlContent {
     text-decoration: none;
     display: block;
     padding: 20px;
     padding-top: 100px;
+    white-space: normal;
+    text-align: left;
 }
 
 .top-tile .HtmlContent h3,
-.research-tile h3 {
+.interior-tile h3 {
     margin: 0;
 }
 
 .top-tile .HtmlContent::before,
-.research-tile .HtmlContent::before {
+.interior-tile .HtmlContent::before {
     font-family: "Font Awesome 5 Pro";
     font-weight: 400;
     font-size: 30px;
@@ -2302,6 +2309,10 @@ div[class*="tiles"] div[class*="tile"].waste .HtmlContent::before {
     content: "\f4d8";
 }
 
+div[class*="tiles"] div[class*="tile"].label .HtmlContent::before {
+    content: "\f02c";
+}
+
 div[class*="tiles"] div[class*="tile"].education .HtmlContent::before {
     content: "\f5db";
 }
@@ -2332,6 +2343,14 @@ div[class*="tiles"] div[class*="tile"].clock .HtmlContent::before {
 
 div[class*="tiles"] div[class*="tile"].file .HtmlContent::before {
     content: "\f15c";
+}
+
+div[class*="tiles"] div[class*="tile"].handshake .HtmlContent::before {
+    content: "\f2b5";
+}
+
+div[class*="tiles"] div[class*="tile"].produce .HtmlContent::before {
+    content: "\f5d1";
 }
 
 .top-tile.resources ul,
