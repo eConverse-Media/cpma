@@ -2031,35 +2031,35 @@ ul.navbar-nav li a .caret::before {
     text-decoration: none;
 }
 
-.dashboard-col-3 .join-committee-btn,
+.dashboard-col-3 .see-more-btn,
 .dashboard-col-3 .view-more-btn {
     flex-basis: 50%;
 }
 
-.dashboard-col-3 .join-committee-btn em {
+.dashboard-col-3 .see-more-btn em {
     display: block;
-    margin: 5px;
+    margin: 8px 5px;
 }
 
-.dashboard-col-3 .join-committee-btn em a {
+.dashboard-col-3 .see-more-btn em a {
     padding: 10px 12px;
     text-align: center;
     font-size: 14px;
     line-height: 17px;
 }
 
-.dashboard-col-3 .join-committee-btn em a:hover::before {
+.dashboard-col-3 .see-more-btn em a:hover::before {
     color: #fff;
 }
 
-.dashboard-col-3 .join-committee-btn em a::before,
-.dashboard-col-3 .view-more-btn em a::before {
+.dashboard-col-3 .see-more-btn em a::before {
     font-family: "Font Awesome 5 Pro";
     content: "\f067";
     margin-right: 10px;
     color: #4c8d2b;
     font-weight: 400;
     font-size: 12px;
+    transform: none;
 }
 
 .dashboard-col-3.dashboard-event .HtmlContent {

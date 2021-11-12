@@ -73,7 +73,7 @@ $(function() {
             $(window).width() < 992 && !$('.dashboard-inner .slick-track').html() && slickify();
         });
 
-    $('.join-committee-btn').appendTo('.dashboard-col-3 div[id*="UpdatePanel"]')
+    $('.see-more-btn').appendTo('.dashboard-col-3 div[id*="UpdatePanel"]')
 
     if (unreadEmailCount == 1) {
         $('.unread').text('unread message');
